@@ -28,7 +28,7 @@ func TestHelperProcess(t *testing.T) {
 
 	switch args[2] {
 	case "/gitignore/templates":
-		os.Stdout.WriteString(`["Go","Python","Ruby"]`)             //nolint:errcheck // test helper process, write errors are non-actionable
+		os.Stdout.WriteString(`["Go","Python","Ruby"]`) //nolint:errcheck // test helper process, write errors are non-actionable
 	case "/gitignore/templates/Go":
 		os.Stdout.WriteString(`{"name":"Go","source":"*.exe\n*.dll\n"}`) //nolint:errcheck // test helper process, write errors are non-actionable
 	case "/gitignore/templates/NotFound":
