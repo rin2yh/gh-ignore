@@ -63,7 +63,7 @@ var getCmd = &cobra.Command{
 		if err != nil {
 			return fmt.Errorf("failed to open file: %w", err)
 		}
-		defer f.Close()
+		defer f.Close() //nolint:errcheck // error is non-actionable in defer context
 
 		content := fmt.Sprintf("\n### %s ###\n%s", matched, source)
 		if _, err := f.WriteString(content); err != nil {
